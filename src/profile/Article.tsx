@@ -1,18 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { StyledParagraph } from './Profile.styles';
+import { Blocks } from '../types';
 
-interface Intensions {
-    index: number,
-    kind: string,
-    length: number
-}
-type Blocks = {
-    text?: string,
-    intentions?: Intensions[],
-    index?: number
-}
-
-export const Article = ({ text, intentions, index }: Blocks) => {
+export const Article = ({ text, intentions, index }: Partial<Blocks>) => {
 
     const [finalText, setFinalText] = useState('');
 
@@ -32,7 +22,7 @@ export const Article = ({ text, intentions, index }: Blocks) => {
         
             let result = '';
             for(let i=0; i<sortedIntentions.length; i++) {
-                if (i==0) {
+                if (i===0) {
                     result = result + text.slice(0, sortedIntentions[i].index) + specialResult[i] + text.slice(sortedIntentions[i].index + sortedIntentions[i].length, sortedIntentions[i+1].index);
                 } else if (i === sortedIntentions.length - 1) {
                     result = result + specialResult[i] + text.slice(sortedIntentions[i].index + sortedIntentions[i].length);

@@ -12,6 +12,7 @@ export const ContentContainer = styled.div`
 
 export const StyledContentContainer = styled(ContentContainer)`
   border-bottom: 1px solid #5e5e5e;
+  margin-bottom: 16px;
 `;
 
 export const Row = styled.div`

@@ -3,46 +3,16 @@ import axios from 'axios';
 import { 
     PageContainer,
     ContentContainer,
-    Headline,
-    Row,
-    BoldByline,
-    BoldTime,
-    NormalByline,
-    NormalTime,
-    PlusSvgTag,
     StyledContentContainer,
 } from './Profile.styles';
 import { Header } from './Header';
 import { Article } from './Article';
 import { Image } from './Image';
 import { Quote } from './Quote';
-import { formatDate } from '../utils/util';
+import { Props } from '../types';
 
 export const Profile = () => {
     const url = "http://localhost:8000/news";
-
-    interface Intensions {
-        index: number,
-        kind: string,
-        length: number
-    }
-
-    interface Blocks {
-        kind: string,
-        captionText?: string,
-        text?: string,
-        url?: string,
-        attribution?: string,
-        intentions?: Intensions[]
-    }
-
-    interface Props {
-        headline: string,
-        source: string,
-        byline: string,
-        publicationDate: string,
-        blocks: Blocks[]
-    }
 
     const [newsContent, setNewsContent] = useState<Props>();
     const getNewsData = () => {

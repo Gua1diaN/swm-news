@@ -9,29 +9,7 @@ import {
     PlusSvgTag,
 } from './Profile.styles';
 import { formatDate } from '../utils/util';
-
-interface Intensions {
-    index: number,
-    kind: string,
-    length: number
-}
-
-interface Blocks {
-    kind: string,
-    captionText?: string,
-    text?: string,
-    url?: string,
-    attribution?: string,
-    intentions?: Intensions[]
-}
-
-interface Props {
-    headline: string,
-    source: string,
-    byline: string,
-    publicationDate: string,
-    blocks: Blocks[]
-}
+import { Props } from '../types';
 
 interface NewsContent {
     newsContent: Props

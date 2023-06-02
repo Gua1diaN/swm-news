@@ -5,14 +5,9 @@ import {
     TextWrap,
     TitleWrap
 } from './Quote.styles';
+import { Blocks } from '../types';
 
-type Blocks = {
-    text?: string,
-    attribution?: string,
-    index?: number
-}
-
-export const Quote = ({ text, attribution, index }: Blocks) => {
+export const Quote = ({ text, attribution, index }: Partial<Blocks>) => {
     return (
         <StyledPage data-testid={`quote-item-${index}`}>
             <ContentContainer>
