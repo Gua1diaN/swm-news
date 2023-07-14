@@ -7,8 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `Start json-server endopoint`
+
 http://localhost:8000/news
-run `json-server --watch db.json --port 8000`
+run `npx json-server --watch db.json --port 8000`
 
 ### `npm start`
 
@@ -48,5 +49,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-
