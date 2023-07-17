@@ -1,8 +1,9 @@
-name: Pull request
+name: Push and Pull request
 on:
   pull_request:
-    branches: [master]
-    # change to dev in streamer-client
+    branches: [dev, "!hotfix**", "!Revert**"]
+  push:
+    branches: ["!hotfix**", "!Revert**"]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,4 +17,4 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Run test
-        run: CI=true yarn test
+        run: yarn test
