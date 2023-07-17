@@ -15,7 +15,5 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: yarn install
-      - name: Start json server
-        run: npx json-server --watch db.json --port 8000
       - name: Run test
         run: CI=true yarn test
