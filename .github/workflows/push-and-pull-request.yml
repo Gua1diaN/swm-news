@@ -1,7 +1,7 @@
 name: Push and Pull request
 on:
   pull_request:
-    branches: [dev, "!hotfix**", "!Revert**"]
+    branches: [dev, "!Hotfix**", "!Revert**"]
   push:
     branches: ["!Hotfix**", "!Revert**"]
 jobs:
