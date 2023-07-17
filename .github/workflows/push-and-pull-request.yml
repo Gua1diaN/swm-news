@@ -1,9 +1,9 @@
 name: Push and Pull request
 on:
   pull_request:
-    branches: [dev, "!Hotfix**", "!Revert**"]
+    branches: [master, "!hotfix**-**-", "!Revert**"]
   push:
-    branches: ["!Hotfix**", "!Revert**"]
+    branches: ["!hotfix**-**-", "!Revert**"]
 jobs:
   test:
     runs-on: ubuntu-latest
