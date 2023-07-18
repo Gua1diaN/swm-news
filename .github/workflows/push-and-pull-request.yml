@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [master, "!hotfix**-**-", "!Revert**"]
   push:
-    branches: ["!hotfix**-**-", "!Revert**"]
+    branches-ignore: ["hotfix**-**-*", "!Revert**"]
 jobs:
   test:
     runs-on: ubuntu-latest
