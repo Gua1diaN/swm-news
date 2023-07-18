@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Check hotfix and revert
         run: |
-          if [[ ${{  toJSON(github).ref_name }} !=~ /^hotifx\s+.*$/ ]]
+          if [[ ${{ github.ref_name }} !=~ /^hotifx\s+.*$/ ]]
             echo "${{ toJSON(github) }}"
           fi
       - name: Get code
