@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: Check hotfix and revert
         run: |
-          if [[ ${{ github.ref_name }} !=~ /^hotifx\s+.*$/ ]]
-            echo "${{ github }}"
+          if [[ ${{  toJSON(github).ref_name }} !=~ /^hotifx\s+.*$/ ]]
+            echo "${{ toJSON(github) }}"
           fi
       - name: Get code
         uses: actions/checkout@v3
