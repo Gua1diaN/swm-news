@@ -1,15 +1,18 @@
 name: Push and Pull request
 on:
   pull_request:
-    branches: [master, "!hotfix**-**-", "!Revert**"]
+    branches:
+      - master
   push:
-    branches-ignore: ["hotfix**-**-*", "!Revert**"]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Output github context
-        run: echo "${{ toJSON(github)}}"
+      - name: Check hotfix and revert
+        run: |
+          if [[ ${{ github.ref_name }} !=~ /^hotifx\s+.*$/ ]]
+            echo "hotfix bypass checks"
+          fi
       - name: Get code
         uses: actions/checkout@v3
       - name: Install NodeJS
