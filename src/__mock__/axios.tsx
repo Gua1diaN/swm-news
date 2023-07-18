@@ -1,6 +1,6 @@
 const mockResponse = {
     data: {
-        "headline": "Vestibulum at eros lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "headline": "Vestibulum at eros lorem ipsum dolor sit amet, consectetur adipiscing elit111",
         "source": "The West Australian123123",
         "byline": "Michelanjelo Michael",
         "publicationDate": "2020-09-01T01:00:00.000Z",
