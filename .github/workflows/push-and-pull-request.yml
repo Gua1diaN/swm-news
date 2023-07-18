@@ -11,7 +11,7 @@ jobs:
       - name: Check hotfix and revert
         run: |
           if [[ ${{ github.ref_name }} !=~ /^hotifx\s+.*$/ ]]
-            echo "hotfix bypass checks"
+            echo "${{ github }}"
           fi
       - name: Get code
         uses: actions/checkout@v3
