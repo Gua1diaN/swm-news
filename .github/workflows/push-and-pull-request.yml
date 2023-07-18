@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: yarn install
+        run: yarn install && echo '${{ startsWith(github.ref_name, 'Revert') }} and ${{ startsWith(github.ref_name, 'revert') }} ---- ${{ startsWith(github.head_ref, 'Revert') }} and ${{ startsWith(github.head_ref, 'revert') }}'
       - name: Run test
-        run: yarn test
+        run: yarn test && echo ${{ toJSON(github) }}
