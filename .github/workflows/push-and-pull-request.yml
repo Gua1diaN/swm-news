@@ -17,6 +17,6 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: yarn install && echo '${{ startsWith(github.ref_name, 'hotfix') }} and ${{ startsWith(github.ref_name, 'Hotfix') }}'
+        run: yarn install && echo '${{ startsWith(github.ref_name, 'hotfix') }} and ${{ startsWith(github.ref_name, 'Hotfix') }} and ${{ startsWith(github.ref_name, 'Revert') }} and ${{ !startsWith(github.ref_name, 'Hotfix') }}'
       - name: Run test
         run: yarn test
