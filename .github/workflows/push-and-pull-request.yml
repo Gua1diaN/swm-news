@@ -6,8 +6,6 @@ on:
   push:
 jobs:
   test:
-    if: |
-      ${{ !startsWith(github.ref_name, 'Hotfix') || !startsWith(github.ref_name, 'hotfix') || !startsWith(github.ref_name, 'Revert') || !startsWith(github.head_ref, 'Hotfix') || !startsWith(github.head_ref, 'hotfix') || !startsWith(github.head_ref, 'Revert') }}
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -17,6 +15,6 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: yarn install && echo '${{ github.ref_name }} and ${{ github.head_ref }}'
+        run: yarn install && echo '${{ toJSON(github) }}'
       - name: Run test
         run: yarn test
