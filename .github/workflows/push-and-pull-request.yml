@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Run test
-        run: yarn test && echo ${{toJSON(github)}}
+        run: yarn test
 
       # 测试先test再build，因为test花的时间少如果fail了可以节省一些资源。
       # 开发人员应该在hotfix时也本地运行test和build来测试是否报错，但是也应该添加pull request运行test1️以确保程序不崩溃。123
