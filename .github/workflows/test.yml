@@ -11,7 +11,7 @@ jobs:
       - name: Run the containerized tests
         run: yarn test
       - name: Archive visual regression failures
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: visual-regression-report
