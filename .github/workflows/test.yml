@@ -6,6 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - name: install
+        run: yarn install
       - name: Run the containerized tests
         run: yarn test
       - name: Archive visual regression failures
