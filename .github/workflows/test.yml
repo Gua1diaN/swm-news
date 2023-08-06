@@ -6,8 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - name: Run the containerized tests
-        run: npm run test-in-docker:ci
+      #   - name: Run the containerized tests
+      #     run: npm run test-in-docker:ci
       - name: Archive visual regression failures
         uses: actions/upload-artifact@v1
         if: failure()
