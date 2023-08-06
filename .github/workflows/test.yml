@@ -9,7 +9,7 @@ jobs:
       - name: install
         run: yarn install
       - name: Run the containerized tests
-        run: yarn test
+        run: CI=true yarn test
       - name: Archive visual regression failures
         uses: actions/upload-artifact@v3
         if: failure()
