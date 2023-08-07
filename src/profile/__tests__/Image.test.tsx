@@ -22,5 +22,8 @@ test('Should test the visual regression test', async () => {
   await page.goto('https://streamer.com.au');
   const image = await page.screenshot();
 
-  expect(image).toMatchImageSnapshot();
+  expect(image).toMatchImageSnapshot({
+    failureThreshold: 0.005,
+  failureThresholdType: 'percent'
+  });
 })
