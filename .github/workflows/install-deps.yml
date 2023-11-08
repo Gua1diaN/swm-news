@@ -3,8 +3,6 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: alpeware/chromium
     steps:
       - name: Get code
         uses: actions/checkout@v3
